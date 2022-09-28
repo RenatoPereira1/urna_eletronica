@@ -17,7 +17,7 @@ namespace ProjetoMySQL.Controllers
         [HttpGet]
         public List<Eleitor> Listar()
         {
-            return contexto.Eleitors.ToList();
+            return contexto.Eleitores.ToList();
         }
 
         [HttpPost]
@@ -31,7 +31,7 @@ namespace ProjetoMySQL.Controllers
         [HttpDelete]
         public string Excluir([FromBody] int id)
         {
-            Eleitor dados = contexto.Eleitors.FirstOrDefault(p => p.Id == id);
+            Eleitor dados = contexto.Eleitores.FirstOrDefault(p => p.Id == id);
 
             if (dados == null)
             {
@@ -60,7 +60,7 @@ namespace ProjetoMySQL.Controllers
         [HttpGet] 
         public Eleitor Visualizar(int id)
         {
-            return contexto.Eleitors.FirstOrDefault(p => p.Id == id);
+            return contexto.Eleitores.FirstOrDefault(p => p.Id == id);
         }
     }
 }

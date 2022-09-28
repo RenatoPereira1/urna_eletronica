@@ -17,8 +17,8 @@ namespace ProjetoMySQL.Models
         }
 
         public virtual DbSet<Candidato> Candidatos { get; set; } = null!;
-        public virtual DbSet<Eleitor> Eleitors { get; set; } = null!;
-        public virtual DbSet<Votacao> Votacaos { get; set; } = null!;
+        public virtual DbSet<Eleitor> Eleitores { get; set; } = null!;
+        public virtual DbSet<Votacao> Votacoes { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -85,13 +85,13 @@ namespace ProjetoMySQL.Models
                 entity.Property(e => e.Zona).HasColumnName("zona");
 
                 entity.HasOne(d => d.IdCandidatoNavigation)
-                    .WithMany(p => p.Votacaos)
+                    .WithMany(p => p.Votacoes)
                     .HasForeignKey(d => d.IdCandidato)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("votacao_ibfk_2");
 
                 entity.HasOne(d => d.IdEleitorNavigation)
-                    .WithMany(p => p.Votacaos)
+                    .WithMany(p => p.Votacoes)
                     .HasForeignKey(d => d.IdEleitor)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("votacao_ibfk_1");

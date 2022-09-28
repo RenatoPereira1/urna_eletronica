@@ -7,7 +7,7 @@ namespace ProjetoMySQL.Models
     {
         public Candidato()
         {
-            Votacaos = new HashSet<Votacao>();
+            Votacoes = new HashSet<Votacao>();
         }
 
         public int Id { get; set; }
@@ -15,6 +15,6 @@ namespace ProjetoMySQL.Models
         public string Nome { get; set; } = null!;
         public string Partido { get; set; } = null!;
 
-        public virtual ICollection<Votacao> Votacaos { get; set; }
+        public virtual ICollection<Votacao> Votacoes { get; set; }
     }
 }
