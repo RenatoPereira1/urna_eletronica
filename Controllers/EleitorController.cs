@@ -45,5 +45,22 @@ namespace ProjetoMySQL.Controllers
                 return "Eleitor(a) removido(a) com sucesso!";
             }
         }
+
+
+        [HttpPut]
+        public string Alterar([FromBody] Eleitor eleitorAtualizado)
+        {
+            contexto.Update(eleitorAtualizado);
+            contexto.SaveChanges();
+
+            return "Eleitor atualizado com sucesso!";
+        }
+
+
+        [HttpGet] 
+        public Eleitor Visualizar(int id)
+        {
+            return contexto.Eleitors.FirstOrDefault(p => p.Id == id);
+        }
     }
 }
