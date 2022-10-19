@@ -17,17 +17,14 @@
         <div class="container">
 
             <div class="row justify-content-center">
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <h3>
                         <center>Cadastro de Candidatos</center>
                     </h3>
 
                     <form name="formulario" autocomplete="off">
 
-                        <div class="form-group">
-                            <label for="idInput">ID</label>
-                            <input type="number" class="form-control" id="idInput" placeholder="Digite o ID do candidato">
-                        </div>
+                        <input type="hidden" class="form-control" id="idInput">
 
                         <div class="form-group">
                             <label for="numeroInput">Número</label>
@@ -45,7 +42,7 @@
                             <input type="text" class="form-control" id="partidoInput" placeholder="Digite o partido do candidato">
                         </div>
 
-                        <button type="button" class="btn btn-primary" onclick="cadastrar()">Enviar</button>
+                        <button type="button" id="salvarBtn" class="btn btn-primary" onclick="cadastrar()">Salvar</button>
                         <button type="button" class="btn btn-primary" onclick="limpar()">Limpar</button>
 
                     </form>
@@ -53,7 +50,7 @@
 
                 <hr>
 
-                <div class="col-md-6">
+                <div class="col-md-8">
                     <h3>
                         <center>Candidatos cadastrados</center>
                     </h3>

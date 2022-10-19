@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using ProjetoMySQL.Models;
- 
+
 namespace ProjetoMySQL.Controllers
 {
     [Route("[controller]/[action]")]
@@ -29,21 +29,45 @@ namespace ProjetoMySQL.Controllers
         }
 
         [HttpDelete]
-        public string Excluir([FromBody] int id)
+        public bool Excluir([FromBody] int id)
         {
             Candidato dados = contexto.Candidatos.FirstOrDefault(p => p.Id == id);
 
             if (dados == null)
             {
-                return "Não foi encontrado Candidato para o ID informado";
+                return false;
             }
             else
             {
-                contexto.Remove(dados);
-                contexto.SaveChanges();
+                try
+                {
+                    contexto.Remove(dados);
+                    contexto.SaveChanges();
 
-                return "Candidato(a) removido(a) com sucesso!";
+                    return true;
+                }
+                catch (Exception e)
+                {
+                    return false;
+                }
+
             }
+        }
+
+        [HttpPut]
+        public string Alterar([FromBody] Candidato candidatoAtualizado)
+        {
+            contexto.Update(candidatoAtualizado);
+            contexto.SaveChanges();
+
+            return "Candidato atualizado com sucesso!";
+        }
+
+
+        [HttpGet] 
+        public Candidato Visualizar(int id)
+        {
+            return contexto.Candidatos.FirstOrDefault(p => p.Id == id);
         }
     }
 }

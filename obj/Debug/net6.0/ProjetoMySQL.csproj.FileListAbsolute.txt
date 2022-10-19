@@ -28,3 +28,33 @@
 /home/joaopaulofcc/Aula2109/ProjetoMySQL/obj/Debug/net6.0/ProjetoMySQL.pdb
 /home/joaopaulofcc/Aula2109/ProjetoMySQL/obj/Debug/net6.0/ProjetoMySQL.genruntimeconfig.cache
 /home/joaopaulofcc/Aula2109/ProjetoMySQL/obj/Debug/net6.0/ref/ProjetoMySQL.dll
+D:\Docencia\01 - Unilavras\OneDrive - Fundação Educacional de Lavras\00 - Ensino\06 - 2022 - 2\02 - Módulo II\00 - ADS\01 - APS 2\00 - Semana 1\ProjetoMySQL\bin\Debug\net6.0\appsettings.Development.json
+D:\Docencia\01 - Unilavras\OneDrive - Fundação Educacional de Lavras\00 - Ensino\06 - 2022 - 2\02 - Módulo II\00 - ADS\01 - APS 2\00 - Semana 1\ProjetoMySQL\bin\Debug\net6.0\appsettings.json
+D:\Docencia\01 - Unilavras\OneDrive - Fundação Educacional de Lavras\00 - Ensino\06 - 2022 - 2\02 - Módulo II\00 - ADS\01 - APS 2\00 - Semana 1\ProjetoMySQL\bin\Debug\net6.0\ProjetoMySQL.staticwebassets.runtime.json
+D:\Docencia\01 - Unilavras\OneDrive - Fundação Educacional de Lavras\00 - Ensino\06 - 2022 - 2\02 - Módulo II\00 - ADS\01 - APS 2\00 - Semana 1\ProjetoMySQL\bin\Debug\net6.0\ProjetoMySQL.exe
+D:\Docencia\01 - Unilavras\OneDrive - Fundação Educacional de Lavras\00 - Ensino\06 - 2022 - 2\02 - Módulo II\00 - ADS\01 - APS 2\00 - Semana 1\ProjetoMySQL\bin\Debug\net6.0\ProjetoMySQL.deps.json
+D:\Docencia\01 - Unilavras\OneDrive - Fundação Educacional de Lavras\00 - Ensino\06 - 2022 - 2\02 - Módulo II\00 - ADS\01 - APS 2\00 - Semana 1\ProjetoMySQL\bin\Debug\net6.0\ProjetoMySQL.runtimeconfig.json
+D:\Docencia\01 - Unilavras\OneDrive - Fundação Educacional de Lavras\00 - Ensino\06 - 2022 - 2\02 - Módulo II\00 - ADS\01 - APS 2\00 - Semana 1\ProjetoMySQL\bin\Debug\net6.0\ProjetoMySQL.dll
+D:\Docencia\01 - Unilavras\OneDrive - Fundação Educacional de Lavras\00 - Ensino\06 - 2022 - 2\02 - Módulo II\00 - ADS\01 - APS 2\00 - Semana 1\ProjetoMySQL\bin\Debug\net6.0\ProjetoMySQL.pdb
+D:\Docencia\01 - Unilavras\OneDrive - Fundação Educacional de Lavras\00 - Ensino\06 - 2022 - 2\02 - Módulo II\00 - ADS\01 - APS 2\00 - Semana 1\ProjetoMySQL\bin\Debug\net6.0\Humanizer.dll
+D:\Docencia\01 - Unilavras\OneDrive - Fundação Educacional de Lavras\00 - Ensino\06 - 2022 - 2\02 - Módulo II\00 - ADS\01 - APS 2\00 - Semana 1\ProjetoMySQL\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+D:\Docencia\01 - Unilavras\OneDrive - Fundação Educacional de Lavras\00 - Ensino\06 - 2022 - 2\02 - Módulo II\00 - ADS\01 - APS 2\00 - Semana 1\ProjetoMySQL\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\Docencia\01 - Unilavras\OneDrive - Fundação Educacional de Lavras\00 - Ensino\06 - 2022 - 2\02 - Módulo II\00 - ADS\01 - APS 2\00 - Semana 1\ProjetoMySQL\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\Docencia\01 - Unilavras\OneDrive - Fundação Educacional de Lavras\00 - Ensino\06 - 2022 - 2\02 - Módulo II\00 - ADS\01 - APS 2\00 - Semana 1\ProjetoMySQL\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\Docencia\01 - Unilavras\OneDrive - Fundação Educacional de Lavras\00 - Ensino\06 - 2022 - 2\02 - Módulo II\00 - ADS\01 - APS 2\00 - Semana 1\ProjetoMySQL\bin\Debug\net6.0\MySqlConnector.dll
+D:\Docencia\01 - Unilavras\OneDrive - Fundação Educacional de Lavras\00 - Ensino\06 - 2022 - 2\02 - Módulo II\00 - ADS\01 - APS 2\00 - Semana 1\ProjetoMySQL\bin\Debug\net6.0\Pomelo.EntityFrameworkCore.MySql.dll
+D:\Docencia\01 - Unilavras\OneDrive - Fundação Educacional de Lavras\00 - Ensino\06 - 2022 - 2\02 - Módulo II\00 - ADS\01 - APS 2\00 - Semana 1\ProjetoMySQL\obj\Debug\net6.0\ProjetoMySQL.csproj.AssemblyReference.cache
+D:\Docencia\01 - Unilavras\OneDrive - Fundação Educacional de Lavras\00 - Ensino\06 - 2022 - 2\02 - Módulo II\00 - ADS\01 - APS 2\00 - Semana 1\ProjetoMySQL\obj\Debug\net6.0\ProjetoMySQL.GeneratedMSBuildEditorConfig.editorconfig
+D:\Docencia\01 - Unilavras\OneDrive - Fundação Educacional de Lavras\00 - Ensino\06 - 2022 - 2\02 - Módulo II\00 - ADS\01 - APS 2\00 - Semana 1\ProjetoMySQL\obj\Debug\net6.0\ProjetoMySQL.AssemblyInfoInputs.cache
+D:\Docencia\01 - Unilavras\OneDrive - Fundação Educacional de Lavras\00 - Ensino\06 - 2022 - 2\02 - Módulo II\00 - ADS\01 - APS 2\00 - Semana 1\ProjetoMySQL\obj\Debug\net6.0\ProjetoMySQL.AssemblyInfo.cs
+D:\Docencia\01 - Unilavras\OneDrive - Fundação Educacional de Lavras\00 - Ensino\06 - 2022 - 2\02 - Módulo II\00 - ADS\01 - APS 2\00 - Semana 1\ProjetoMySQL\obj\Debug\net6.0\ProjetoMySQL.csproj.CoreCompileInputs.cache
+D:\Docencia\01 - Unilavras\OneDrive - Fundação Educacional de Lavras\00 - Ensino\06 - 2022 - 2\02 - Módulo II\00 - ADS\01 - APS 2\00 - Semana 1\ProjetoMySQL\obj\Debug\net6.0\ProjetoMySQL.MvcApplicationPartsAssemblyInfo.cache
+D:\Docencia\01 - Unilavras\OneDrive - Fundação Educacional de Lavras\00 - Ensino\06 - 2022 - 2\02 - Módulo II\00 - ADS\01 - APS 2\00 - Semana 1\ProjetoMySQL\obj\Debug\net6.0\staticwebassets.build.json
+D:\Docencia\01 - Unilavras\OneDrive - Fundação Educacional de Lavras\00 - Ensino\06 - 2022 - 2\02 - Módulo II\00 - ADS\01 - APS 2\00 - Semana 1\ProjetoMySQL\obj\Debug\net6.0\staticwebassets.development.json
+D:\Docencia\01 - Unilavras\OneDrive - Fundação Educacional de Lavras\00 - Ensino\06 - 2022 - 2\02 - Módulo II\00 - ADS\01 - APS 2\00 - Semana 1\ProjetoMySQL\obj\Debug\net6.0\scopedcss\bundle\ProjetoMySQL.styles.css
+D:\Docencia\01 - Unilavras\OneDrive - Fundação Educacional de Lavras\00 - Ensino\06 - 2022 - 2\02 - Módulo II\00 - ADS\01 - APS 2\00 - Semana 1\ProjetoMySQL\obj\Debug\net6.0\ProjetoMySQL.csproj.CopyComplete
+D:\Docencia\01 - Unilavras\OneDrive - Fundação Educacional de Lavras\00 - Ensino\06 - 2022 - 2\02 - Módulo II\00 - ADS\01 - APS 2\00 - Semana 1\ProjetoMySQL\obj\Debug\net6.0\ProjetoMySQL.dll
+D:\Docencia\01 - Unilavras\OneDrive - Fundação Educacional de Lavras\00 - Ensino\06 - 2022 - 2\02 - Módulo II\00 - ADS\01 - APS 2\00 - Semana 1\ProjetoMySQL\obj\Debug\net6.0\refint\ProjetoMySQL.dll
+D:\Docencia\01 - Unilavras\OneDrive - Fundação Educacional de Lavras\00 - Ensino\06 - 2022 - 2\02 - Módulo II\00 - ADS\01 - APS 2\00 - Semana 1\ProjetoMySQL\obj\Debug\net6.0\ProjetoMySQL.pdb
+D:\Docencia\01 - Unilavras\OneDrive - Fundação Educacional de Lavras\00 - Ensino\06 - 2022 - 2\02 - Módulo II\00 - ADS\01 - APS 2\00 - Semana 1\ProjetoMySQL\obj\Debug\net6.0\ProjetoMySQL.genruntimeconfig.cache
+D:\Docencia\01 - Unilavras\OneDrive - Fundação Educacional de Lavras\00 - Ensino\06 - 2022 - 2\02 - Módulo II\00 - ADS\01 - APS 2\00 - Semana 1\ProjetoMySQL\obj\Debug\net6.0\ref\ProjetoMySQL.dll

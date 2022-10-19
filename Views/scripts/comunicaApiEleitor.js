@@ -21,7 +21,7 @@ function grid() {
                 
                 let botaoExcluir = $('<button class="btn btn-danger"></button>').attr('type', 'button').html('Excluir').attr('onclick', 'excluir(' + resposta[i].id + ')');
                 let botaoAlterar = $('<button class="btn btn-secondary"></button>').attr('type', 'button').html('Alterar').attr('onclick', 'alterar(' + resposta[i].id + ')');
-                let botaoVisualizar = $('<button class="btn btn-secondary"></button>').attr('type', 'button').html('Visualizar').attr('onclick', 'visualizar(' + resposta[i].id + ')');
+                let botaoVisualizar = $('<button class="btn btn-secondary"></button>').attr('type', 'button').html('Ver').attr('onclick', 'visualizar(' + resposta[i].id + ')');
 
                 let acoes = $('<td></td>');
                 acoes.append(botaoVisualizar);
