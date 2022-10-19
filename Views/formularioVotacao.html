@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Urna Unilavras</title>
+        <meta charset="utf-8">
+
+        <script src="./scripts/jquery-3.6.0.js"></script>
+        <script src="./scripts/comunicaApiVotacao.js"></script>
+        <link rel="stylesheet" type="text/css" href="./styles/formulario.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    </head>
+
+    <body>
+
+        <div class="container">
+
+            <div class="row justify-content-center">
+                <div class="col-md-4">
+                    <h3>
+                        <center>Votação</center>
+                    </h3>
+
+                    <form name="formulario" autocomplete="off">
+
+                        <input type="hidden" class="form-control" id="idInput">
+
+                        <div class="form-group">
+                            <label for="eleitorInput">Eleitor(a)</label>
+                            <input type="number" class="form-control" id="eleitorInput" placeholder="Digite o CPF do(a) eleitor(a)" onchange="consultaEleitorPorCpf(this.value);">
+                            <label id="eleitorNome"></label>
+                            <input type="hidden" class="form-control" id="eleitorId">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="candidatoSelect">Candidato(a)</label>
+                            <select id="candidatoSelect" class="form-control" onchange="validaCandidato()">
+                                <option value="0">Selecione o candidato(a)...</option>
+                            </select>
+                        </div>
+
+                        <button type="button" id="salvarBtn" class="btn btn-primary" onclick="cadastrar()">Votar</button>
+                        <button type="button" class="btn btn-primary" onclick="limpar()">Limpar</button>
+
+                    </form>
+                </div>
+
+                <hr>
+
+                <div class="col-md-8">
+                    <h3>
+                        <center>Votações registradas</center>
+                    </h3>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr class="text-center">
+                                <th>ELEITOR</th>
+                                <th>CANDIDATO</th>
+                            </tr>
+                        </thead>
+                        <tbody id="grid">
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </body>
+
+</html>

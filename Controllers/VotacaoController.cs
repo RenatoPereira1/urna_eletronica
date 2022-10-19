@@ -25,8 +25,6 @@ namespace ProjetoMySQL.Controllers
                         Id = v.Id,
                         IdCandidato = v.IdCandidato,
                         IdEleitor = v.IdEleitor,
-                        Zona = v.Zona,
-                        Secao = v.Secao,
                         IdEleitorNavigation = new Eleitor 
                         { 
                             Id = v.IdEleitorNavigation.Id, 
@@ -42,6 +40,14 @@ namespace ProjetoMySQL.Controllers
                         } 
                     }
                 ).ToList();
+        }
+
+        [HttpPost]
+        public string Cadastrar([FromBody] Votacao novaVotacao)
+        {
+            contexto.Add(novaVotacao);
+            contexto.SaveChanges();
+            return "Votacao registrada com sucesso!";
         }
     }
 }

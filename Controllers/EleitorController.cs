@@ -62,5 +62,12 @@ namespace ProjetoMySQL.Controllers
         {
             return contexto.Eleitores.FirstOrDefault(p => p.Id == id);
         }
+
+
+        [HttpGet] 
+        public Eleitor BuscaPorCpf(string cpf)
+        {
+            return contexto.Eleitores.FirstOrDefault(p => p.Cpf == cpf);
+        }
     }
 }

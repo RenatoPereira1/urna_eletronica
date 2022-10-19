@@ -25,7 +25,7 @@ namespace ProjetoMySQL.Models
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseMySql("server=localhost;user=root;password=root;database=AulaTeste", Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.30-mysql"));
+                optionsBuilder.UseMySql("server=localhost;port=3306;user=root;password=root;database=aulateste", Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.24-mysql"));
             }
         }
 
@@ -80,20 +80,14 @@ namespace ProjetoMySQL.Models
 
                 entity.Property(e => e.IdEleitor).HasColumnName("idEleitor");
 
-                entity.Property(e => e.Secao).HasColumnName("secao");
-
-                entity.Property(e => e.Zona).HasColumnName("zona");
-
                 entity.HasOne(d => d.IdCandidatoNavigation)
                     .WithMany(p => p.Votacoes)
                     .HasForeignKey(d => d.IdCandidato)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("votacao_ibfk_2");
 
                 entity.HasOne(d => d.IdEleitorNavigation)
                     .WithMany(p => p.Votacoes)
                     .HasForeignKey(d => d.IdEleitor)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("votacao_ibfk_1");
             });
 
