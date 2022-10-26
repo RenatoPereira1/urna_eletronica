@@ -14,6 +14,7 @@ namespace ProjetoMySQL.Models
         public int Numero { get; set; }
         public string Nome { get; set; } = null!;
         public string Partido { get; set; } = null!;
+        public bool Excluido { get; set; }
 
         public virtual ICollection<Votacao> Votacoes { get; set; }
     }

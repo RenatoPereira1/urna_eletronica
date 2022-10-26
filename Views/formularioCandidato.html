@@ -19,6 +19,8 @@
             <div id="nav-placeholder">
                 
             </div>
+
+            <br>
             
             <script>
                 $.get("./navbar.html", function(data){
@@ -64,10 +66,29 @@
                     <h3>
                         <center>Candidatos cadastrados</center>
                     </h3>
+                    
+                    <div class="form-group">
+
+                        <p>
+                            <label>Filtrar por Partido:</label>
+                            <select id="partidoSelect" class="form-control" onchange="listaCandidatoPorPartido();">
+                                <option value="0">Selecione o partido....</option>
+                            </select>
+                        </p>
+
+                        <p>
+                            <label for="orderCrescente">Ordenar:</label> 
+                            <button id="orderCrescente" type="button" class="btn btn-secondary" onclick="listarGridCrescente();">Número &darr; </button>
+                            <button id="orderDecrescente" type="button" class="btn btn-secondary" onclick="listarGridDecrescente();">Número &uarr;</button>
+                            <button id="orderDecrescente" type="button" class="btn btn-secondary" onclick="listarGrid();">Padrão</button>
+                        </p>
+                        
+                    </div>
+
+
                     <table class="table table-striped">
                         <thead>
                             <tr class="text-center">
-                                <th>ID</th>
                                 <th>NÚMERO</th>
                                 <th>NOME</th>
                                 <th>PARTIDO</th>

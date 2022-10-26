@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Docencia\\01 - Unilavras\\OneDrive - Fundação Educacional de Lavras\\00 - Ensino\\06 - 2022 - 2\\02 - Módulo II\\00 - ADS\\01 - APS 2\\00 - Semana 1\\ProjetoMySQL\\ProjetoMySQL.csproj": {}
+    "D:\\Docencia\\01 - Unilavras\\OneDrive - Fundação Educacional de Lavras\\00 - Ensino\\06 - 2022 - 2\\02 - Módulo II\\00 - ADS\\01 - APS 2\\01 - Semana 2\\Final\\Versão 6\\ProjetoMySQL\\ProjetoMySQL.csproj": {}
   },
   "projects": {
-    "D:\\Docencia\\01 - Unilavras\\OneDrive - Fundação Educacional de Lavras\\00 - Ensino\\06 - 2022 - 2\\02 - Módulo II\\00 - ADS\\01 - APS 2\\00 - Semana 1\\ProjetoMySQL\\ProjetoMySQL.csproj": {
+    "D:\\Docencia\\01 - Unilavras\\OneDrive - Fundação Educacional de Lavras\\00 - Ensino\\06 - 2022 - 2\\02 - Módulo II\\00 - ADS\\01 - APS 2\\01 - Semana 2\\Final\\Versão 6\\ProjetoMySQL\\ProjetoMySQL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Docencia\\01 - Unilavras\\OneDrive - Fundação Educacional de Lavras\\00 - Ensino\\06 - 2022 - 2\\02 - Módulo II\\00 - ADS\\01 - APS 2\\00 - Semana 1\\ProjetoMySQL\\ProjetoMySQL.csproj",
+        "projectUniqueName": "D:\\Docencia\\01 - Unilavras\\OneDrive - Fundação Educacional de Lavras\\00 - Ensino\\06 - 2022 - 2\\02 - Módulo II\\00 - ADS\\01 - APS 2\\01 - Semana 2\\Final\\Versão 6\\ProjetoMySQL\\ProjetoMySQL.csproj",
         "projectName": "ProjetoMySQL",
-        "projectPath": "D:\\Docencia\\01 - Unilavras\\OneDrive - Fundação Educacional de Lavras\\00 - Ensino\\06 - 2022 - 2\\02 - Módulo II\\00 - ADS\\01 - APS 2\\00 - Semana 1\\ProjetoMySQL\\ProjetoMySQL.csproj",
+        "projectPath": "D:\\Docencia\\01 - Unilavras\\OneDrive - Fundação Educacional de Lavras\\00 - Ensino\\06 - 2022 - 2\\02 - Módulo II\\00 - ADS\\01 - APS 2\\01 - Semana 2\\Final\\Versão 6\\ProjetoMySQL\\ProjetoMySQL.csproj",
         "packagesPath": "C:\\Users\\joaop\\.nuget\\packages\\",
-        "outputPath": "D:\\Docencia\\01 - Unilavras\\OneDrive - Fundação Educacional de Lavras\\00 - Ensino\\06 - 2022 - 2\\02 - Módulo II\\00 - ADS\\01 - APS 2\\00 - Semana 1\\ProjetoMySQL\\obj\\",
+        "outputPath": "D:\\Docencia\\01 - Unilavras\\OneDrive - Fundação Educacional de Lavras\\00 - Ensino\\06 - 2022 - 2\\02 - Módulo II\\00 - ADS\\01 - APS 2\\01 - Semana 2\\Final\\Versão 6\\ProjetoMySQL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -56,6 +56,10 @@
             "Pomelo.EntityFrameworkCore.MySql": {
               "target": "Package",
               "version": "[6.0.0, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.4.0, )"
             }
           },
           "imports": [

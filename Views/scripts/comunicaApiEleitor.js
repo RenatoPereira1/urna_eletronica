@@ -1,5 +1,7 @@
 $(document).ready(function() {
     grid();
+    $('#dtBasicExample').DataTable();
+    $('.dataTables_length').addClass('bs-select');
 });
 
 function limpar() {

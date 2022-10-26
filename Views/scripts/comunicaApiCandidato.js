@@ -1,5 +1,6 @@
 $(document).ready(function() {
-    grid();
+    listarGrid();
+    listarPartidos();
 });
 
 function limpar() {
@@ -9,40 +10,87 @@ function limpar() {
     formulario.partidoInput.value = '';
 }
 
-function grid() {
+function carregarGrid(resposta){
+    $('#grid tr').remove();
+    for(i = 0; i < resposta.length; i++) {                
+        let linha = $('<tr class="text-center"></tr>');
+        
+        linha.append($('<td></td>').html(resposta[i].numero));
+        linha.append($('<td></td>').html(resposta[i].nome));
+        linha.append($('<td></td>').html(resposta[i].partido));
+        
+        let botaoExcluir = $('<button class="btn btn-danger"></button>').attr('type', 'button').html('Excluir').attr('onclick', 'excluir(' + resposta[i].id + ')');
+        let botaoAlterar = $('<button class="btn btn-secondary"></button>').attr('type', 'button').html('Alterar').attr('onclick', 'alterar(' + resposta[i].id + ')');
+        let botaoVisualizar = $('<button class="btn btn-secondary"></button>').attr('type', 'button').html('Ver').attr('onclick', 'visualizar(' + resposta[i].id + ')');
+
+        let acoes = $('<td></td>');
+        acoes.append(botaoVisualizar);
+        acoes.append('&nbsp;')
+        acoes.append(botaoAlterar);
+        acoes.append('&nbsp;')
+        acoes.append(botaoExcluir);
+
+        linha.append(acoes);
+        
+        $('#grid').append(linha);
+    }
+}
+
+function listarGrid(){
     $.get('https://localhost:5001/Candidato/Listar')
         .done(function(resposta) { 
-            for(i = 0; i < resposta.length; i++) {                
-                let linha = $('<tr class="text-center"></tr>');
-                
-                linha.append($('<td></td>').html(resposta[i].id));
-                linha.append($('<td></td>').html(resposta[i].numero));
-                linha.append($('<td></td>').html(resposta[i].nome));
-                linha.append($('<td></td>').html(resposta[i].partido));
-                
-                let botaoExcluir = $('<button class="btn btn-danger"></button>').attr('type', 'button').html('Excluir').attr('onclick', 'excluir(' + resposta[i].id + ')');
-                let botaoAlterar = $('<button class="btn btn-secondary"></button>').attr('type', 'button').html('Alterar').attr('onclick', 'alterar(' + resposta[i].id + ')');
-                let botaoVisualizar = $('<button class="btn btn-secondary"></button>').attr('type', 'button').html('Ver').attr('onclick', 'visualizar(' + resposta[i].id + ')');
-
-                let acoes = $('<td></td>');
-                acoes.append(botaoVisualizar);
-                acoes.append('&nbsp;')
-                acoes.append(botaoAlterar);
-                acoes.append('&nbsp;')
-                acoes.append(botaoExcluir);
-
-                linha.append(acoes);
-                
-                $('#grid').append(linha);
-            }
+            carregarGrid(resposta);
         })
         .fail(function(erro, mensagem, excecao) { 
-            alert("Erro ao consultar a API!");
+            alert(mensagem + ': ' + excecao);
         });
 }
 
+
+function listarGridDecrescente(){
+    $.get('https://localhost:5001/Candidato/Listar?order=d')
+        .done(function(resposta) { 
+            carregarGrid(resposta);
+        })
+        .fail(function(erro, mensagem, excecao) { 
+            alert(mensagem + ': ' + excecao);
+        });
+}
+
+function listarGridCrescente(){
+    $.get('https://localhost:5001/Candidato/Listar?order=c')
+        .done(function(resposta) { 
+            carregarGrid(resposta);
+        })
+        .fail(function(erro, mensagem, excecao) { 
+            alert(mensagem + ': ' + excecao);
+        });
+}
+
+
+function listaCandidatoPorPartido() {
+
+    var element = document.getElementById("partidoSelect");
+    var valuePartido = element.options[element.selectedIndex].value;
+    var textPartido = element.options[element.selectedIndex].text;
+    
+    if(valuePartido == 0){
+        listarGrid();
+    }
+    else
+    {
+        $.get('https://localhost:5001/Candidato/ListarPorPartido?partido=' + textPartido)
+            .done(function(resposta) { 
+                carregarGrid(resposta);
+            })
+            .fail(function(erro, mensagem, excecao) { 
+                alert("Erro ao consultar a API!");
+            });
+        }
+}
+
+
 function excluir(id) {
-    console.log(id)
     $.ajax({
         type: 'DELETE',
         url: 'https://localhost:5001/Candidato/Excluir/',
@@ -138,3 +186,19 @@ function alterar(id){
             alert("Erro ao realizar a alteração!");
         });
 }
+
+
+
+function listarPartidos(){
+    $.get('https://localhost:5001/Candidato/ListarPartidos')
+        .done(function(resposta) { 
+            for(i = 0; i < resposta.length; i++) {
+                $('#partidoSelect').append($('<option></option>').val(i+1).html(resposta[i]));
+            }
+        })
+        .fail(function(erro, mensagem, excecao) { 
+            alert(mensagem + ': ' + excecao);
+        });
+}
+
+
