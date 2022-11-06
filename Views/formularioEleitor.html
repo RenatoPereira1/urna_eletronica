@@ -64,6 +64,25 @@
                     <h3>
                         <center>Eleitores cadastrados</center>
                     </h3>
+
+                    <div class="form-group">
+
+                        <p>
+                            <label>Filtrar por Nome:</label>
+                            <select id="eleitorSelect" class="form-control" onchange="listaEleitorPorNome();">
+                                <option value="0">Selecione o Eleitor....</option>
+                            </select>
+                        </p>
+
+                        <p>
+                            <label for="orderCrescente">Ordenar:</label> 
+                            <button id="orderCrescente" type="button" class="btn btn-secondary" onclick="listarGridCrescente();">Nome &darr; </button>
+                            <button id="orderDecrescente" type="button" class="btn btn-secondary" onclick="listarGridDecrescente();">Nome &uarr;</button>
+                            <button id="orderDecrescente" type="button" class="btn btn-secondary" onclick="listarGrid();">Padrão</button>
+                        </p>
+                        
+                    </div>
+
                     <table class="table table-striped">
                         <thead>
                             <tr class="text-center">

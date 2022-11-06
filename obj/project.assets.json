@@ -1143,30 +1143,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\joaop\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\reap\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Docencia\\01 - Unilavras\\OneDrive - Fundação Educacional de Lavras\\00 - Ensino\\06 - 2022 - 2\\02 - Módulo II\\00 - ADS\\01 - APS 2\\01 - Semana 2\\Final\\Versão 6\\ProjetoMySQL\\ProjetoMySQL.csproj",
+      "projectUniqueName": "C:\\Users\\reap\\Dropbox\\Faculdade\\8° Trimestre\\Análise e Projeto de Software II\\2 Semana\\Versão 7\\ProjetoMySQL\\ProjetoMySQL.csproj",
       "projectName": "ProjetoMySQL",
-      "projectPath": "D:\\Docencia\\01 - Unilavras\\OneDrive - Fundação Educacional de Lavras\\00 - Ensino\\06 - 2022 - 2\\02 - Módulo II\\00 - ADS\\01 - APS 2\\01 - Semana 2\\Final\\Versão 6\\ProjetoMySQL\\ProjetoMySQL.csproj",
-      "packagesPath": "C:\\Users\\joaop\\.nuget\\packages\\",
-      "outputPath": "D:\\Docencia\\01 - Unilavras\\OneDrive - Fundação Educacional de Lavras\\00 - Ensino\\06 - 2022 - 2\\02 - Módulo II\\00 - ADS\\01 - APS 2\\01 - Semana 2\\Final\\Versão 6\\ProjetoMySQL\\obj\\",
+      "projectPath": "C:\\Users\\reap\\Dropbox\\Faculdade\\8° Trimestre\\Análise e Projeto de Software II\\2 Semana\\Versão 7\\ProjetoMySQL\\ProjetoMySQL.csproj",
+      "packagesPath": "C:\\Users\\reap\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\reap\\Dropbox\\Faculdade\\8° Trimestre\\Análise e Projeto de Software II\\2 Semana\\Versão 7\\ProjetoMySQL\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\joaop\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\reap\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -1222,7 +1216,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
       }
     }
   }

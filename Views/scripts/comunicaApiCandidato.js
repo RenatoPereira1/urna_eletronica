@@ -8,6 +8,7 @@ function limpar() {
     formulario.numeroInput.value = '';
     formulario.nomeInput.value = '';
     formulario.partidoInput.value = '';
+    $('#salvarBtn').html('Salvar');
 }
 
 function carregarGrid(resposta){

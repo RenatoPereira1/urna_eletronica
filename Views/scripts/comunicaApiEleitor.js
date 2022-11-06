@@ -1,5 +1,6 @@
 $(document).ready(function() {
-    grid();
+    listarGrid();
+    listarNomes();
     $('#dtBasicExample').DataTable();
     $('.dataTables_length').addClass('bs-select');
 });
@@ -11,35 +12,84 @@ function limpar() {
     $('#salvarBtn').html('Salvar');
 }
 
-function grid() {
+
+function carregarGrid(resposta){
+    $('#grid tr').remove();
+    for(i = 0; i < resposta.length; i++) {                
+        let linha = $('<tr class="text-center"></tr>');
+        
+        linha.append($('<td></td>').html(resposta[i].id));
+        linha.append($('<td></td>').html(resposta[i].cpf));
+        linha.append($('<td></td>').html(resposta[i].nome));
+        
+        let botaoExcluir = $('<button class="btn btn-danger"></button>').attr('type', 'button').html('Excluir').attr('onclick', 'excluir(' + resposta[i].id + ')');
+        let botaoAlterar = $('<button class="btn btn-secondary"></button>').attr('type', 'button').html('Alterar').attr('onclick', 'alterar(' + resposta[i].id + ')');
+        let botaoVisualizar = $('<button class="btn btn-secondary"></button>').attr('type', 'button').html('Ver').attr('onclick', 'visualizar(' + resposta[i].id + ')');
+
+        let acoes = $('<td></td>');
+        acoes.append(botaoVisualizar);
+        acoes.append('&nbsp;')
+        acoes.append(botaoAlterar);
+        acoes.append('&nbsp;')
+        acoes.append(botaoExcluir);
+
+        linha.append(acoes);
+        
+        $('#grid').append(linha);
+    }
+}
+
+function listarGrid(){
     $.get('https://localhost:5001/Eleitor/Listar')
         .done(function(resposta) { 
-            for(i = 0; i < resposta.length; i++) {                
-                let linha = $('<tr class="text-center"></tr>');
-                
-                linha.append($('<td></td>').html(resposta[i].id));
-                linha.append($('<td></td>').html(resposta[i].cpf));
-                linha.append($('<td></td>').html(resposta[i].nome));
-                
-                let botaoExcluir = $('<button class="btn btn-danger"></button>').attr('type', 'button').html('Excluir').attr('onclick', 'excluir(' + resposta[i].id + ')');
-                let botaoAlterar = $('<button class="btn btn-secondary"></button>').attr('type', 'button').html('Alterar').attr('onclick', 'alterar(' + resposta[i].id + ')');
-                let botaoVisualizar = $('<button class="btn btn-secondary"></button>').attr('type', 'button').html('Ver').attr('onclick', 'visualizar(' + resposta[i].id + ')');
-
-                let acoes = $('<td></td>');
-                acoes.append(botaoVisualizar);
-                acoes.append('&nbsp;')
-                acoes.append(botaoAlterar);
-                acoes.append('&nbsp;')
-                acoes.append(botaoExcluir);
-
-                linha.append(acoes);
-                
-                $('#grid').append(linha);
-            }
+            carregarGrid(resposta);
         })
         .fail(function(erro, mensagem, excecao) { 
-            alert("Erro ao consultar a API!");
+            alert(mensagem + ': ' + excecao);
         });
+}
+
+
+function listarGridDecrescente(){
+    $.get('https://localhost:5001/Eleitor/Listar?order=d')
+        .done(function(resposta) { 
+            carregarGrid(resposta);
+        })
+        .fail(function(erro, mensagem, excecao) { 
+            alert(mensagem + ': ' + excecao);
+        });
+}
+
+function listarGridCrescente(){
+    $.get('https://localhost:5001/Eleitor/Listar?order=c')
+        .done(function(resposta) { 
+            carregarGrid(resposta);
+        })
+        .fail(function(erro, mensagem, excecao) { 
+            alert(mensagem + ': ' + excecao);
+        });
+}
+
+
+function listaEleitorPorNome() {
+
+    var element = document.getElementById("eleitorSelect");
+    var valueEleitor = element.options[element.selectedIndex].value;
+    var textEleitor = element.options[element.selectedIndex].text;
+    
+    if(valueEleitor == 0){
+        listarGrid();
+    }
+    else
+    {
+        $.get('https://localhost:5001/Eleitor/ListarPorNome?nome=' + textEleitor)
+            .done(function(resposta) { 
+                carregarGrid(resposta);
+            })
+            .fail(function(erro, mensagem, excecao) { 
+                alert("Erro ao consultar a API!");
+            });
+        }
 }
 
 function excluir(id) {
@@ -127,5 +177,17 @@ function alterar(id){
         })
         .fail(function(erro, mensagem, excecao) { 
             alert("Erro ao realizar a alteração!");
+        });
+}
+
+function listarNomes(){
+    $.get('https://localhost:5001/Eleitor/ListarNomes')
+        .done(function(resposta) { 
+            for(i = 0; i < resposta.length; i++) {
+                $('#eleitorSelect').append($('<option></option>').val(i+1).html(resposta[i]));
+            }
+        })
+        .fail(function(erro, mensagem, excecao) { 
+            alert(mensagem + ': ' + excecao);
         });
 }

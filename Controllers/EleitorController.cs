@@ -14,10 +14,21 @@ namespace ProjetoMySQL.Controllers
             contexto = bdContexto;
         }
  
-        [HttpGet]
-        public List<Eleitor> Listar()
+         [HttpGet]
+        public List<Eleitor> Listar(string? order = "padrao")
         {
-            return contexto.Eleitores.ToList();
+            if(order == "c"){
+                return contexto.Eleitores.OrderBy(c => c.Nome).ToList();
+            }
+
+            else if(order == "d"){
+                return contexto.Eleitores.OrderByDescending(c => c.Nome).ToList();
+            }
+
+            else{
+                return contexto.Eleitores.OrderBy(c => c.Id).ToList();
+            }
+            
         }
 
         [HttpPost]
@@ -68,6 +79,36 @@ namespace ProjetoMySQL.Controllers
         public Eleitor BuscaPorCpf(string cpf)
         {
             return contexto.Eleitores.FirstOrDefault(p => p.Cpf == cpf);
+        }
+        [HttpGet]
+        public List<Eleitor> ListarPorNome(string nome)
+        {
+            return contexto.Eleitores.Where(p => p.Nome == nome).Select
+            (
+                p => new Eleitor 
+                { 
+                    Id = p.Id,
+                    Cpf = p.Cpf,
+                    Nome = p.Nome
+                     
+                }).ToList();
+        }
+
+        [HttpGet]
+        public List<string> ListarNomes()
+        {
+
+            var consultaNomes = (from eleitor in contexto.Eleitores select eleitor.Nome).Distinct().ToList();
+
+            return consultaNomes;
+        }
+
+        [HttpGet]
+        public List<int> ListarNumeros()
+        {                
+            var consultaNumeros = (from candidato in contexto.Candidatos select candidato.Numero).Distinct();
+
+            return consultaNumeros.OrderBy(n=>n).ToList();
         }
     }
 }
