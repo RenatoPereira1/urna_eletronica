@@ -64,15 +64,28 @@
                     <h3>
                         <center>Votações registradas</center>
                     </h3>
-                    <table class="table table-striped">
+
+                    <div class="form-group">
+
+                        <p>
+                            <label>Filtrar por Candidato:</label>
+                            <select id="candSelect" class="form-control" onchange="listaVotosPorCandidato()">
+                                <option value="0">Selecione o Candidato....</option>
+                            </select>
+                        </p>
+                        
+                    </div>
+
+                    <table class="table table-striped"  id="table_id">
                         <thead>
                             <tr class="text-center">
                                 <th>ELEITOR</th>
                                 <th>CANDIDATO</th>
                             </tr>
+                            
                         </thead>
                         <tbody id="grid">
-
+                            
                         </tbody>
                     </table>
                 </div>

@@ -1,9 +1,11 @@
 $(document).ready(function() {
-    grid();
+    listarGrid();
     listarCandidato();
+    listarCandidatoss();
     $('#salvarBtn').prop('disabled', true);
     $('#candidatoSelect').prop('disabled', true);
 });
+
 
 
 function listarCandidato(){
@@ -11,6 +13,18 @@ function listarCandidato(){
         .done(function(resposta) { 
             for(i = 0; i < resposta.length; i++) {
                 $('#candidatoSelect').append($('<option></option>').val(resposta[i].id).html(resposta[i].nome));
+            }
+        })
+        .fail(function(erro, mensagem, excecao) { 
+            alert(mensagem + ': ' + excecao);
+        });
+}
+
+function listarCandidatoss(){
+    $.get('https://localhost:5001/Candidato/Listar')
+        .done(function(resposta) { 
+            for(i = 0; i < resposta.length; i++) {
+                $('#candSelect').append($('<option></option>').val(resposta[i].id).html(resposta[i].nome));
             }
         })
         .fail(function(erro, mensagem, excecao) { 
@@ -63,21 +77,57 @@ function limpar() {
 
 }
 
-function grid() {
+
+function carregarGrid(resposta){
+    $('#grid tr').remove();
+    for(i = 0; i < resposta.length; i++) {                
+        let linha = $('<tr class="text-center"></tr>');
+        
+        linha.append($('<td></td>').html(resposta[i].idEleitorNavigation.nome));
+        linha.append($('<td></td>').html(resposta[i].idCandidatoNavigation.nome))
+        
+        $('#grid').append(linha);
+    }
+    let linha2 = $('<tr class="text-center"></tr>');
+        
+    linha2.append($('<td></td>').html("Total"));
+    linha2.append($('<td></td>').html($("#table_id tr").length -1));
+    $('#grid').append(linha2);
+
+}
+
+function listarGrid(){
     $.get('https://localhost:5001/Votacao/Listar')
         .done(function(resposta) { 
-            for(i = 0; i < resposta.length; i++) {                
-                let linha = $('<tr class="text-center"></tr>');
-                
-                linha.append($('<td></td>').html(resposta[i].idEleitorNavigation.nome));
-                linha.append($('<td></td>').html(resposta[i].idCandidatoNavigation.nome))
-                
-                $('#grid').append(linha);
-            }
+            carregarGrid(resposta);
         })
         .fail(function(erro, mensagem, excecao) { 
-            alert("Erro ao consultar a API!");
+            alert(mensagem + ': ' + excecao);
         });
+}
+
+
+
+
+function listaVotosPorCandidato() {
+
+    var element = document.getElementById("candSelect");
+    var valueVotacao = element.options[element.selectedIndex].value;
+    var textVotacao = element.options[element.selectedIndex].text;
+    
+    if(valueVotacao == 0){
+        listarGrid();
+    }
+    else
+    {
+        $.get('https://localhost:5001/Votacao/ListarPorCandidato?id=' + valueVotacao)
+            .done(function(resposta) { 
+                carregarGrid(resposta);
+            })
+            .fail(function(erro, mensagem, excecao) { 
+                alert("Erro ao consultar a API!");
+            });
+        }
 }
 
 
@@ -106,3 +156,5 @@ function cadastrar() {
         }
     });
 }
+
+

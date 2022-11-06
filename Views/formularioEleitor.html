@@ -75,6 +75,13 @@
                         </p>
 
                         <p>
+                            <label>Filtrar por Cpf:</label>
+                            <select id="cpfSelect" class="form-control" onchange="listaEleitorPorCpf();">
+                                <option value="0">Selecione o CPF do Eleitor....</option>
+                            </select>
+                        </p>
+
+                        <p>
                             <label for="orderCrescente">Ordenar:</label> 
                             <button id="orderCrescente" type="button" class="btn btn-secondary" onclick="listarGridCrescente();">Nome &darr; </button>
                             <button id="orderDecrescente" type="button" class="btn btn-secondary" onclick="listarGridDecrescente();">Nome &uarr;</button>

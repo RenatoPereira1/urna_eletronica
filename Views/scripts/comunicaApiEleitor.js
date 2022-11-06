@@ -1,6 +1,7 @@
 $(document).ready(function() {
     listarGrid();
     listarNomes();
+    listarCpf();
     $('#dtBasicExample').DataTable();
     $('.dataTables_length').addClass('bs-select');
 });
@@ -83,6 +84,27 @@ function listaEleitorPorNome() {
     else
     {
         $.get('https://localhost:5001/Eleitor/ListarPorNome?nome=' + textEleitor)
+            .done(function(resposta) { 
+                carregarGrid(resposta);
+            })
+            .fail(function(erro, mensagem, excecao) { 
+                alert("Erro ao consultar a API!");
+            });
+        }
+}
+
+function listaEleitorPorCpf() {
+
+    var element = document.getElementById("cpfSelect");
+    var valueCpf = element.options[element.selectedIndex].value;
+    var textCpf = element.options[element.selectedIndex].text;
+    
+    if(valueCpf == 0){
+        listarGrid();
+    }
+    else
+    {
+        $.get('https://localhost:5001/Eleitor/ListarPorCpf?cpf=' + textCpf)
             .done(function(resposta) { 
                 carregarGrid(resposta);
             })
@@ -185,6 +207,18 @@ function listarNomes(){
         .done(function(resposta) { 
             for(i = 0; i < resposta.length; i++) {
                 $('#eleitorSelect').append($('<option></option>').val(i+1).html(resposta[i]));
+            }
+        })
+        .fail(function(erro, mensagem, excecao) { 
+            alert(mensagem + ': ' + excecao);
+        });
+}
+
+function listarCpf(){
+    $.get('https://localhost:5001/Eleitor/ListarCpf')
+        .done(function(resposta) { 
+            for(i = 0; i < resposta.length; i++) {
+                $('#cpfSelect').append($('<option></option>').val(i+1).html(resposta[i]));
             }
         })
         .fail(function(erro, mensagem, excecao) { 

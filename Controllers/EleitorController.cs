@@ -95,6 +95,20 @@ namespace ProjetoMySQL.Controllers
         }
 
         [HttpGet]
+        public List<Eleitor> ListarPorCpf(string cpf)
+        {
+            return contexto.Eleitores.Where(p => p.Cpf == cpf).Select
+            (
+                p => new Eleitor 
+                { 
+                    Id = p.Id,
+                    Cpf = p.Cpf,
+                    Nome = p.Nome
+                     
+                }).ToList();
+        }
+
+        [HttpGet]
         public List<string> ListarNomes()
         {
 
@@ -104,11 +118,11 @@ namespace ProjetoMySQL.Controllers
         }
 
         [HttpGet]
-        public List<int> ListarNumeros()
+        public List<string> ListarCpf()
         {                
-            var consultaNumeros = (from candidato in contexto.Candidatos select candidato.Numero).Distinct();
+            var consultaCpf = (from eleitor in contexto.Eleitores select eleitor.Cpf).Distinct();
 
-            return consultaNumeros.OrderBy(n=>n).ToList();
+            return consultaCpf.OrderBy(n=>n).ToList();
         }
     }
 }
